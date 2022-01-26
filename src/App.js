@@ -1,18 +1,15 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm2 from './components/TextForm2';
-import React, { cloneElement, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Alert from './components/Alert';
 
 
 
 const body = document.getElementsByTagName('body')[0]
-
 function App() {
-  const [toggle, settoggle] = useState('Enable Dark Mode')
+  const [toggle, settoggle] = useState(localStorage.getItem('mode') === 'bg-dark' ? 'Disable Dark Mode' : 'Enable Dark Mode')
   const [alert, setalert] = useState(null)
-
-
   const showAlert = (message, type) => {
     setalert({
       msg: message,
@@ -23,9 +20,8 @@ function App() {
     }, 2000)
   }
   useEffect(() => {
-    body.classList.toggle(localStorage.getItem('mode')==='bg-dark'?'bg-dark':'bg-white')
-    body.classList.toggle(localStorage.getItem('mode')==='bg-dark'?'text-light':'text-dark')
-    console.log(body.classList)
+    body.classList.toggle(localStorage.getItem('mode') === 'bg-dark' ? 'bg-dark' : 'bg-white')
+    body.classList.toggle(localStorage.getItem('mode') === 'bg-dark' ? 'text-light' : 'text-dark')
   }, []);
 
   const onToggleMode = () => {
@@ -34,8 +30,8 @@ function App() {
       body.classList.remove('text-light')
       body.classList.add('bg-white')
       body.classList.add('text-dark')
-      settoggle("Disable Dark Mode")
-      showAlert('Dark mode enabled.', 'success')
+      showAlert('Dark mode disabled.', 'success')
+      settoggle("Enable Dark Mode")
       localStorage.setItem('mode', 'bg-white')
     }
     else {
@@ -43,8 +39,8 @@ function App() {
       body.classList.remove('text-dark')
       body.classList.add('bg-dark')
       body.classList.add('text-light')
-      settoggle("Enable Dark Mode")
-      showAlert('Dark mode disabled.', 'success')
+      showAlert('Dark mode enabled.', 'success')
+      settoggle("Disable Dark Mode")
       localStorage.setItem('mode', 'bg-dark')
     }
   }
@@ -52,12 +48,10 @@ function App() {
   return (
     <>
       <Navbar title='Text Ninja' modeText={toggle} toggleMode={onToggleMode} />
-      <Alert alert={alert} />
-
+      <div className='alert-box'>
+        <Alert alert={alert} />
+      </div>
       <TextForm2 heading="Text Modifier" showAlert={showAlert} />
-
-
-
     </>
   );
 }

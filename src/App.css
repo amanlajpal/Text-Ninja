@@ -1,7 +1,9 @@
 .buttons button{
   margin-bottom: 1rem;
 }
-
+.alert-box{
+  height: 5rem;
+}
 .navbar{
   background-color: rgb(255, 174, 0);
   color: #282c34;
