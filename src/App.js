@@ -51,7 +51,7 @@ function App() {
       <div className='alert-box'>
         <Alert alert={alert} />
       </div>
-      <TextForm2 heading="Text Modifier" showAlert={showAlert} />
+      <TextForm2 heading="Text Modifiers" showAlert={showAlert} />
     </>
   );
 }
