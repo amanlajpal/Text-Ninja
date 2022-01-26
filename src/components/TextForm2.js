@@ -47,9 +47,8 @@ export default function Result(props) {
                 <div className="buttons my-3">
                     <button disabled= {text.length===0} className="btn btn-primary mx-2" type="submit" onClick={onUpperCase}>Upper Case</button>
                     <button disabled= {text.length===0} className="btn btn-primary mx-2" type="submit" onClick={onLowerCase}>Lower Case</button>
-                    <button disabled= {text.length===0} className="btn btn-primary mx-2" type="submit" onClick={onClear}>Clear</button>
-                    <button disabled= {text.length===0} className="btn btn-primary mx-2" type="submit" onClick={onCopy}>Copy Output</button>
                     <button disabled= {text.length===0} className="btn btn-primary mx-2" type="submit" onClick={onHtmlToJsx}>Html to JSX</button>
+                    <button disabled= {text.length===0} className="btn btn-primary mx-2" type="submit" onClick={onClear}>Clear</button>
                 </div>
                 <div className="textDetails">
                     <h2>Text Details</h2>
@@ -59,6 +58,7 @@ export default function Result(props) {
                         <h3>Output: </h3>
                         <p>{para}</p>
                         <button className="btn btn-primary my-2" type="submit" onClick={onMove}>Move Up</button>
+                        <button disabled= {para.length===0} className="btn btn-primary mx-2" type="submit" onClick={onCopy}>Copy Output</button>
                     </div>
                 </div>
 

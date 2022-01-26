@@ -4,6 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+// body.classList.toggle(localStorage.getItem('mode'))
+// body.classList.toggle(localStorage.getItem('mode')==='bg-dark'?'text-light':'')
+
 ReactDOM.render(
   <React.StrictMode>
     <App />

@@ -1,14 +1,9 @@
 import './App.css';
 import Navbar from './components/Navbar';
 import TextForm2 from './components/TextForm2';
-import React, { useState } from 'react'
+import React, { cloneElement, useEffect, useState } from 'react'
 import Alert from './components/Alert';
-import About from './components/About';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-} from "react-router-dom";
+
 
 
 const body = document.getElementsByTagName('body')[0]
@@ -16,6 +11,7 @@ const body = document.getElementsByTagName('body')[0]
 function App() {
   const [toggle, settoggle] = useState('Enable Dark Mode')
   const [alert, setalert] = useState(null)
+
 
   const showAlert = (message, type) => {
     setalert({
@@ -26,32 +22,42 @@ function App() {
       setalert(null)
     }, 2000)
   }
+  useEffect(() => {
+    body.classList.toggle(localStorage.getItem('mode')==='bg-dark'?'bg-dark':'bg-white')
+    body.classList.toggle(localStorage.getItem('mode')==='bg-dark'?'text-light':'text-dark')
+    console.log(body.classList)
+  }, []);
 
   const onToggleMode = () => {
-    body.classList.toggle('bg-dark')
-    body.classList.toggle('text-light')
     if (body.classList.contains('bg-dark')) {
+      body.classList.remove('bg-dark')
+      body.classList.remove('text-light')
+      body.classList.add('bg-white')
+      body.classList.add('text-dark')
       settoggle("Disable Dark Mode")
       showAlert('Dark mode enabled.', 'success')
+      localStorage.setItem('mode', 'bg-white')
     }
     else {
+      body.classList.remove('bg-white')
+      body.classList.remove('text-dark')
+      body.classList.add('bg-dark')
+      body.classList.add('text-light')
       settoggle("Enable Dark Mode")
       showAlert('Dark mode disabled.', 'success')
+      localStorage.setItem('mode', 'bg-dark')
     }
   }
 
   return (
     <>
-      <Router>
-        <Navbar title='Text Utils' mode={toggle} toggleMode={onToggleMode} />
-        <Alert alert={alert} />
-        {/* <TextForm heading="Enter the text to analyze" />*/}
-        <Routes>
-          <Route exact path="/" element={<TextForm2 heading="Text Modifier" showAlert={showAlert} />}>
-          </Route>
-          <Route exact path="about" element={<About />} /><Route/>
-        </Routes>
-      </Router>
+      <Navbar title='Text Ninja' modeText={toggle} toggleMode={onToggleMode} />
+      <Alert alert={alert} />
+
+      <TextForm2 heading="Text Modifier" showAlert={showAlert} />
+
+
+
     </>
   );
 }
