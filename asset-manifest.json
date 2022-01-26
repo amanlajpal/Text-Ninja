@@ -1,16 +1,14 @@
 {
   "files": {
     "main.css": "/Text-Ninja/static/css/main.076405c9.chunk.css",
-    "main.js": "/Text-Ninja/static/js/main.125187b6.chunk.js",
-    "main.js.map": "/Text-Ninja/static/js/main.125187b6.chunk.js.map",
-    "runtime~main.js": "/Text-Ninja/static/js/runtime~main.7738b1a2.js",
-    "runtime~main.js.map": "/Text-Ninja/static/js/runtime~main.7738b1a2.js.map",
+    "main.js": "/Text-Ninja/static/js/main.c1f57d5b.chunk.js",
+    "main.js.map": "/Text-Ninja/static/js/main.c1f57d5b.chunk.js.map",
+    "runtime~main.js": "/Text-Ninja/static/js/runtime~main.7ac79b32.js",
+    "runtime~main.js.map": "/Text-Ninja/static/js/runtime~main.7ac79b32.js.map",
     "static/js/2.624f555d.chunk.js": "/Text-Ninja/static/js/2.624f555d.chunk.js",
     "static/js/2.624f555d.chunk.js.map": "/Text-Ninja/static/js/2.624f555d.chunk.js.map",
-    "static/js/3.d439ba6f.chunk.js": "/Text-Ninja/static/js/3.d439ba6f.chunk.js",
-    "static/js/3.d439ba6f.chunk.js.map": "/Text-Ninja/static/js/3.d439ba6f.chunk.js.map",
     "index.html": "/Text-Ninja/index.html",
-    "precache-manifest.fa518f617c0759528f5ec4ab8ab01648.js": "/Text-Ninja/precache-manifest.fa518f617c0759528f5ec4ab8ab01648.js",
+    "precache-manifest.97016fc8fa4823b250fa525850725ea7.js": "/Text-Ninja/precache-manifest.97016fc8fa4823b250fa525850725ea7.js",
     "service-worker.js": "/Text-Ninja/service-worker.js",
     "static/css/main.076405c9.chunk.css.map": "/Text-Ninja/static/css/main.076405c9.chunk.css.map"
   }
